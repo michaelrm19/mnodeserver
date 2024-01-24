@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data Visualization</title>
+</head>
+<body>
+    <h1>Country Data</h1>
+
+    <button onclick="fetchAndProcessCountry()">Fetch and Process Country Data</button>
+
+    <h2>Processed Country Data:</h2>
+    <div id="processedCountryData"></div>
+
+    <script>
+        async function fetchAndProcessCountry() {
+            try {
+                const response = await fetch('http://localhost:3000/process-country');
+                const data = await response.json();
+
+                if (data.success) {
+                    displayProcessedCountryData(data.data);
+                } else {
+                    console.error('Error processing country data:', data.error);
+                }
+            } catch (error) {
+                console.error('Error fetching and processing country data:', error.message);
+            }
+        }
+        function displayProcessedCountryData(data) {
+            const processedCountryDataElement = document.getElementById('processedCountryData');
+            processedCountryDataElement.innerHTML = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
