@@ -4,8 +4,7 @@ This is the source code to create a Node.js server using Express.js. It will fet
 ## Instructions on how to run the application:
 
 1. Install Node.js: Ensure that you have Node.js installed on your machine. You can download it from nodejs.org.
-2. Clone the repository to your local machine using the following command in your terminal or command prompt:
-git clone https://github.com/your-username/your-repository.git
+2. Clone the repository to your local machine.
 3. Run the following command to install the required dependencies:
 npm install express axios
 4. Start the Node.js server using the following command:
